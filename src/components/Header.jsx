@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
-import { ShoppingBag, Menu, X } from 'lucide-react'
+import { ShoppingBag, Menu, X, ArrowRight } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import { business } from '../data/business'
 
 const links = [
-  { href: '#products', label: 'Shop' },
-  { href: '#services', label: 'Services' },
+  { href: '#top', label: 'Home' },
+  { href: '#menu', label: 'Menu' },
   { href: '#about', label: 'About' },
-  { href: '#hours', label: 'Hours' },
+  { href: '#gallery', label: 'Gallery' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -15,9 +15,20 @@ export default function Header() {
   const { count, setCartOpen } = useCart()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [active, setActive] = useState('#top')
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20)
+      const ids = ['top', 'menu', 'about', 'gallery', 'contact']
+      for (const id of [...ids].reverse()) {
+        const el = document.getElementById(id)
+        if (el && el.getBoundingClientRect().top <= 120) {
+          setActive(`#${id}`)
+          break
+        }
+      }
+    }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -27,10 +38,10 @@ export default function Header() {
     <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="header-inner">
         <a href="#top" className="brand" aria-label={`${business.name} home`}>
-          <img src="/logo.png" alt="" className="brand-logo" width="48" height="48" />
+          <img src="/logo.png" alt="" className="brand-logo" width="52" height="52" />
           <span className="brand-text">
             <span className="brand-name">RRR Food</span>
-            <span className="brand-tag">{business.tagline}</span>
+            <span className="brand-tag">Traditional Taste · Homemade Love</span>
           </span>
         </a>
 
@@ -39,6 +50,7 @@ export default function Header() {
             <a
               key={l.href}
               href={l.href}
+              className={active === l.href ? 'is-active' : ''}
               onClick={() => setMenuOpen(false)}
             >
               {l.label}
@@ -54,8 +66,11 @@ export default function Header() {
             aria-label={`Open cart, ${count} items`}
           >
             <ShoppingBag size={20} strokeWidth={2} />
-            {count > 0 && <span className="cart-badge">{count}</span>}
+            <span className="cart-badge">{count}</span>
           </button>
+          <a href="#menu" className="btn btn-order">
+            Order Now <ArrowRight size={16} />
+          </a>
           <button
             type="button"
             className="icon-btn menu-btn"

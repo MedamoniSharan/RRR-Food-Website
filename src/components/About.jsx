@@ -9,12 +9,15 @@ export default function About() {
           className="about-visual"
           initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
-          <div className="about-photo" />
+          <img
+            src="/products/hero-laddu.jpg"
+            alt="Homemade laddus from RRR Food"
+            className="about-photo-img"
+          />
           <div className="about-logo-wrap">
-            <img src="/logo.png" alt="" width="120" height="120" />
+            <img src="/logo.png" alt="" width="100" height="100" />
           </div>
         </motion.div>
 
@@ -22,17 +25,18 @@ export default function About() {
           className="about-copy"
           initial={{ opacity: 0, x: 24 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.55 }}
+          viewport={{ once: true }}
         >
           <p className="eyebrow">About us</p>
           <h2>About {business.name}</h2>
           <p className="about-welcome">{about.welcome}</p>
           {about.body.map((para) => (
-            <p key={para.slice(0, 24)}>{para}</p>
+            <p key={para.slice(0, 32)}>{para}</p>
           ))}
           <p className="about-mission">{about.mission}</p>
-          <p className="about-signoff">{business.name} — {business.tagline}.</p>
+          <p className="about-signoff">
+            {business.name} — {business.tagline}.
+          </p>
         </motion.div>
       </div>
     </section>

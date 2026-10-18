@@ -1,11 +1,14 @@
 import { CartProvider } from './context/CartContext'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import PopularMenu from './components/PopularMenu'
 import Products from './components/Products'
-import Services from './components/Services'
-import About from './components/About'
-import Hours from './components/Hours'
 import CtaBanner from './components/CtaBanner'
+import TrustBar from './components/TrustBar'
+import About from './components/About'
+import Gallery from './components/Gallery'
+import Hours from './components/Hours'
+import Services from './components/Services'
 import Footer from './components/Footer'
 import CartDrawer from './components/CartDrawer'
 import CheckoutModal from './components/CheckoutModal'
@@ -17,11 +20,14 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <Products />
-        <Services />
-        <About />
-        <Hours />
+        <PopularMenu />
         <CtaBanner />
+        <TrustBar />
+        <Products />
+        <About />
+        <Gallery />
+        <Services />
+        <Hours />
       </main>
       <Footer />
       <CartDrawer />

@@ -63,7 +63,7 @@ export default function Services() {
         <div className="services-cta">
           <button
             type="button"
-            className="btn btn-accent"
+            className="btn btn-order"
             onClick={() => setBookingOpen(true)}
           >
             Book food preparation service

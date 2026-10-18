@@ -1,35 +1,44 @@
 import { motion } from 'framer-motion'
-import { useCart } from '../context/CartContext'
+import { ArrowRight } from 'lucide-react'
 
 export default function CtaBanner() {
-  const { setBookingOpen } = useCart()
-
   return (
-    <section className="cta-banner">
-      <div className="container cta-inner">
+    <section className="crave-cta" aria-label="Delivery call to action">
+      <div className="crave-panel">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="crave-copy"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.55 }}
         >
-          <h2>Ready for traditional homemade goodness?</h2>
+          <p className="eyebrow light">Good Food Always</p>
+          <h2>
+            Crave It? <span>We’ll Deliver It!</span>
+          </h2>
           <p>
-            Order spices, sweets, and snacks online — or book our kitchen for
-            your next function.
+            Order homemade laddus, snacks, and spices online — fresh taste,
+            home delivery, and advance booking for bulk orders.
           </p>
-          <div className="hero-ctas">
-            <a href="#products" className="btn btn-accent">
-              Shop products
-            </a>
-            <button
-              type="button"
-              className="btn btn-ghost-light"
-              onClick={() => setBookingOpen(true)}
-            >
-              Book a service
-            </button>
-          </div>
+          <a href="#menu" className="btn btn-order">
+            Order Now <ArrowRight size={16} />
+          </a>
+        </motion.div>
+
+        <motion.div
+          className="crave-media"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55 }}
+        >
+          <img
+            src="/products/poha-mixture.jpg"
+            alt="Fresh homemade snacks ready for delivery"
+          />
+          <span className="crave-note" aria-hidden="true">
+            Good Food, Homemade Love!
+          </span>
         </motion.div>
       </div>
     </section>
