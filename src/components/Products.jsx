@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ShoppingBag } from 'lucide-react'
 import { categories, weightLabels } from '../data/products'
-import { useCart } from '../context/CartContext'
 import { formatINR } from '../utils/whatsapp'
+import AddToCartButton from './AddToCartButton'
 
 function ProductCard({ product, categoryName }) {
-  const { addItem } = useCart()
   const [weight, setWeight] = useState('1/2kg')
   const price = product.prices[weight]
 
@@ -38,13 +36,10 @@ function ProductCard({ product, categoryName }) {
             {formatINR(price)}
             {product.priceVaries && <span className="varies">*</span>}
           </strong>
-          <button
-            type="button"
-            className="btn btn-order btn-sm"
-            onClick={() => addItem({ ...product, categoryName }, weight)}
-          >
-            <ShoppingBag size={15} /> Add to Cart
-          </button>
+          <AddToCartButton
+            product={{ ...product, categoryName }}
+            weight={weight}
+          />
         </div>
       </div>
     </article>

@@ -1,26 +1,25 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ShoppingBag, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { allProducts, weightLabels } from '../data/products'
-import { useCart } from '../context/CartContext'
 import { formatINR } from '../utils/whatsapp'
+import AddToCartButton from './AddToCartButton'
 
 const featuredIds = [
   'jaggery-urad-laddu',
-  'guntur-chilli',
-  'poha-mixture',
-  'sweet-gujiya',
+  'groundnut-karam',
+  'spicy-boondi',
+  'rice-rings-large',
 ]
 
 const blurbs = {
   'jaggery-urad-laddu': 'Traditional urad dal laddus sweetened with jaggery.',
-  'guntur-chilli': 'Bold Andhra-style chilli karam for everyday meals.',
-  'poha-mixture': 'Crispy, spicy mixture perfect for tea-time snacking.',
-  'sweet-gujiya': 'Festive sweet gujiya made fresh for special occasions.',
+  'groundnut-karam': 'Homemade groundnut karam — spicy, crunchy & aromatic.',
+  'spicy-boondi': 'Crispy spicy boondi with peanuts and curry leaves.',
+  'rice-rings-large': 'Golden rice flour murukulu — crunchy homemade snack.',
 }
 
 export default function PopularMenu() {
-  const { addItem } = useCart()
   const featured = featuredIds
     .map((id) => allProducts.find((p) => p.id === id))
     .filter(Boolean)
@@ -54,7 +53,6 @@ export default function PopularMenu() {
               product={product}
               blurb={blurbs[product.id]}
               popular={i === 0}
-              onAdd={addItem}
               delay={i * 0.06}
             />
           ))}
@@ -64,7 +62,7 @@ export default function PopularMenu() {
   )
 }
 
-function PopularCard({ product, blurb, popular, onAdd, delay }) {
+function PopularCard({ product, blurb, popular, delay }) {
   const [weight, setWeight] = useState('1/2kg')
   const price = product.prices[weight]
 
@@ -103,13 +101,7 @@ function PopularCard({ product, blurb, popular, onAdd, delay }) {
             {formatINR(price)}
             {product.priceVaries && <span className="varies">*</span>}
           </strong>
-          <button
-            type="button"
-            className="btn btn-order btn-sm"
-            onClick={() => onAdd(product, weight)}
-          >
-            <ShoppingBag size={15} /> Add to Cart
-          </button>
+          <AddToCartButton product={product} weight={weight} />
         </div>
       </div>
     </motion.article>

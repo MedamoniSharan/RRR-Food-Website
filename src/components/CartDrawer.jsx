@@ -113,6 +113,13 @@ export default function CartDrawer() {
               >
                 Place order
               </button>
+              <button
+                type="button"
+                className="btn btn-outline btn-block"
+                onClick={() => setCartOpen(false)}
+              >
+                Continue shopping
+              </button>
             </div>
           </>
         )}

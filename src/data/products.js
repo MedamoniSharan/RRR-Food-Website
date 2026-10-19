@@ -63,7 +63,7 @@ export const categories = [
     products: [
       {
         id: 'jaggery-shells',
-        name: 'Jaggery Sweet Shells',
+        name: 'Jaggery Nuvula Laddu',
         image: '/products/jaggery-shells.jpg',
         prices: { '1kg': 300, '1/2kg': 160, '1/4kg': 100 },
         priceVaries: false,

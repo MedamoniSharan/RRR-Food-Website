@@ -12,8 +12,8 @@ export default function About() {
           viewport={{ once: true }}
         >
           <img
-            src="/products/hero-laddu.jpg"
-            alt="Homemade laddus from RRR Food"
+            src="/products/hero.jpg"
+            alt="Homemade snacks and sweets from RRR Food"
             className="about-photo-img"
           />
           <div className="about-logo-wrap">

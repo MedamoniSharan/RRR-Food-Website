@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion'
 
 const shots = [
-  { src: '/products/hero-laddu.jpg', alt: 'Homemade laddus' },
-  { src: '/products/chilli.jpg', alt: 'Homemade chilli karam' },
-  { src: '/products/rice-rings-large.jpg', alt: 'Rice flour rings' },
-  { src: '/products/gujiya.jpg', alt: 'Sweet gujiya' },
+  { src: '/products/hero.jpg', alt: 'Homemade snacks assortment' },
+  { src: '/products/urad-laddu.jpg', alt: 'Jaggery urad dal laddu' },
+  { src: '/products/rice-rings-large.jpg', alt: 'Rice flour murukulu' },
+  { src: '/products/peanut-balls.jpg', alt: 'Jaggery peanut balls' },
   { src: '/products/spicy-boondi.jpg', alt: 'Spicy boondi' },
-  { src: '/products/turmeric.jpg', alt: 'Turmeric powder' },
+  { src: '/products/curry-leaves.jpg', alt: 'Curry leaves powder' },
 ]
 
 export default function Gallery() {

@@ -13,6 +13,7 @@ import Footer from './components/Footer'
 import CartDrawer from './components/CartDrawer'
 import CheckoutModal from './components/CheckoutModal'
 import BookingModal from './components/BookingModal'
+import Toast from './components/Toast'
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
       <CartDrawer />
       <CheckoutModal />
       <BookingModal />
+      <Toast />
     </CartProvider>
   )
 }

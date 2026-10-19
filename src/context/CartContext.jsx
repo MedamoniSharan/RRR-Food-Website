@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react'
 
 const CartContext = createContext(null)
 const STORAGE_KEY = 'rrr-food-cart'
@@ -17,10 +17,29 @@ export function CartProvider({ children }) {
   const [cartOpen, setCartOpen] = useState(false)
   const [checkoutOpen, setCheckoutOpen] = useState(false)
   const [bookingOpen, setBookingOpen] = useState(false)
+  const [toast, setToast] = useState(null)
+  const toastTimer = useRef(null)
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items))
   }, [items])
+
+  useEffect(() => {
+    return () => {
+      if (toastTimer.current) clearTimeout(toastTimer.current)
+    }
+  }, [])
+
+  const clearToast = () => {
+    if (toastTimer.current) clearTimeout(toastTimer.current)
+    setToast(null)
+  }
+
+  const showToast = (payload) => {
+    if (toastTimer.current) clearTimeout(toastTimer.current)
+    setToast(payload)
+    toastTimer.current = setTimeout(() => setToast(null), 3200)
+  }
 
   const addItem = (product, weight, qty = 1) => {
     const key = `${product.id}:${weight}`
@@ -46,7 +65,12 @@ export function CartProvider({ children }) {
         },
       ]
     })
-    setCartOpen(true)
+    // Keep shopping — do not open the cart drawer
+    showToast({
+      name: product.name,
+      weight,
+      image: product.image,
+    })
   }
 
   const updateQty = (key, qty) => {
@@ -87,6 +111,8 @@ export function CartProvider({ children }) {
     setCheckoutOpen,
     bookingOpen,
     setBookingOpen,
+    toast,
+    clearToast,
   }
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>

@@ -31,7 +31,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.65 }}
           >
-            Food Made with{' '}
+            <span className="hero-line">Food Made with</span>
             <span className="hero-script">Love</span>
           </motion.h1>
 
@@ -72,23 +72,6 @@ export default function Hero() {
             ))}
           </motion.ul>
         </div>
-
-        <motion.div
-          className="hero-visual"
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.7 }}
-        >
-          <img
-            src="/products/hero-laddu.jpg"
-            alt="Homemade laddus from RRR Food"
-            className="hero-dish"
-          />
-          <div className="hero-badge" aria-hidden="true">
-            <img src="/logo.png" alt="" width="56" height="56" />
-            <span>Best homemade in town</span>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

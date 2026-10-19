@@ -33,7 +33,7 @@ export default function CtaBanner() {
           transition={{ duration: 0.55 }}
         >
           <img
-            src="/products/poha-mixture.jpg"
+            src="/products/hero.jpg"
             alt="Fresh homemade snacks ready for delivery"
           />
           <span className="crave-note" aria-hidden="true">
