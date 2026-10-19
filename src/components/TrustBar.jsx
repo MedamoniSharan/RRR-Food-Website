@@ -3,7 +3,7 @@ import { Leaf, Star, Truck, CreditCard } from 'lucide-react'
 const items = [
   { icon: Leaf, label: '100% Fresh Ingredients' },
   { icon: Star, label: 'Top Rated by Customers' },
-  { icon: Truck, label: 'Delivery Available' },
+  { icon: Truck, label: 'Delivery Available (charges apply)' },
   { icon: CreditCard, label: 'Secure Online Payment' },
 ]
 

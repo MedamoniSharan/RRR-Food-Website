@@ -939,6 +939,11 @@ p {
   line-height: 1.4;
 }
 
+.charge-note strong {
+  font-weight: 800;
+  color: #5c3500;
+}
+
 .section-charge {
   display: inline-block;
   margin-top: 0.85rem;

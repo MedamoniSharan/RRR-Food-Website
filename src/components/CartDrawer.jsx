@@ -101,7 +101,8 @@ export default function CartDrawer() {
                 <strong>{formatINR(total)}</strong>
               </div>
               <p className="charge-note">
-                The final price might change depending on the order.
+                The final price might change depending on the order.{' '}
+                <strong>Delivery charges also apply.</strong>
               </p>
               <p className="fineprint">
                 Confirmed on WhatsApp. * may vary.

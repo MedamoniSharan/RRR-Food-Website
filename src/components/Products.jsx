@@ -66,7 +66,8 @@ export default function Products() {
             Items marked * may vary slightly in price.
           </p>
           <p className="charge-note section-charge">
-            The final price might change depending on the order.
+            The final price might change depending on the order.{' '}
+            <strong>Delivery charges also apply.</strong>
           </p>
         </motion.div>
 
