@@ -72,7 +72,6 @@ export default function CheckoutModal() {
         </p>
 
         <p className="charge-note">
-          The final price might change depending on the order.{' '}
           <strong>Delivery charges also apply.</strong>
         </p>
 

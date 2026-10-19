@@ -23,7 +23,7 @@ export function buildOrderMessage({ items, total, customer }) {
     }),
     '',
     `*Total: ${formatINR(total)}*`,
-    '_The final price might change depending on the order. *Delivery charges also apply.*_',
+    '_*Delivery charges also apply.*_',
     items.some((i) => i.priceVaries)
       ? '_* Prices marked may vary; final amount confirmed on call._'
       : null,
