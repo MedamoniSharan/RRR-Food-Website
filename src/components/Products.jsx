@@ -65,6 +65,9 @@ export default function Products() {
             Spices, sweets, and hot snacks — choose weight and order in advance.
             Items marked * may vary slightly in price.
           </p>
+          <p className="charge-note section-charge">
+            Delivery charges also apply on all home delivery orders.
+          </p>
         </motion.div>
 
         <div className="category-tabs" role="tablist">

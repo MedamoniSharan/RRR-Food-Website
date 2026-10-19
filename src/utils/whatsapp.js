@@ -23,11 +23,12 @@ export function buildOrderMessage({ items, total, customer }) {
     }),
     '',
     `*Total: ${formatINR(total)}*`,
+    '_Delivery charges also apply (confirmed separately)._',
     items.some((i) => i.priceVaries)
       ? '_* Prices marked may vary; final amount confirmed on call._'
       : null,
     '',
-    'Please confirm availability, delivery, and payment.',
+    'Please confirm availability, delivery charges, and payment.',
   ].filter(Boolean)
 
   return lines.join('\n')

@@ -100,6 +100,9 @@ export default function CartDrawer() {
                 <span>Estimated total</span>
                 <strong>{formatINR(total)}</strong>
               </div>
+              <p className="charge-note">
+                Delivery charges also apply — confirmed at order time.
+              </p>
               <p className="fineprint">
                 Final price confirmed on WhatsApp. * may vary.
               </p>

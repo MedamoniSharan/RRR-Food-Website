@@ -71,6 +71,11 @@ export default function CheckoutModal() {
           <strong>{formatINR(total)}</strong>
         </p>
 
+        <p className="charge-note">
+          Delivery charges also apply — amount depends on location and is
+          confirmed when you place the order.
+        </p>
+
         <form className="form" onSubmit={submit}>
           <label>
             Full name *
