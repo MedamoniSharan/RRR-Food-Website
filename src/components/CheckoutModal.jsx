@@ -72,8 +72,7 @@ export default function CheckoutModal() {
         </p>
 
         <p className="charge-note">
-          Delivery charges also apply — amount depends on location and is
-          confirmed when you place the order.
+          The final price might change depending on the order.
         </p>
 
         <form className="form" onSubmit={submit}>

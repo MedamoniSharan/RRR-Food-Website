@@ -101,10 +101,10 @@ export default function CartDrawer() {
                 <strong>{formatINR(total)}</strong>
               </div>
               <p className="charge-note">
-                Delivery charges also apply — confirmed at order time.
+                The final price might change depending on the order.
               </p>
               <p className="fineprint">
-                Final price confirmed on WhatsApp. * may vary.
+                Confirmed on WhatsApp. * may vary.
               </p>
               <button
                 type="button"

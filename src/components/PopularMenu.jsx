@@ -38,7 +38,7 @@ export default function PopularMenu() {
             <h2>Popular Menu</h2>
             <p className="section-lead">
               Customer favourites from our homemade kitchen — pick a weight and
-              add to cart. Delivery charges also apply.
+              add to cart. The final price might change depending on the order.
             </p>
           </motion.div>
           <a href="#products" className="btn btn-outline">

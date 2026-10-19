@@ -66,7 +66,7 @@ export default function Products() {
             Items marked * may vary slightly in price.
           </p>
           <p className="charge-note section-charge">
-            Delivery charges also apply on all home delivery orders.
+            The final price might change depending on the order.
           </p>
         </motion.div>
 

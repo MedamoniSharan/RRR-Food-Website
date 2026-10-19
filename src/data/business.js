@@ -40,7 +40,7 @@ export const services = [
     id: 'delivery',
     title: 'Home Delivery & Shipping',
     description:
-      'Get laddus, snacks, and spices delivered to your door. Delivery charges also apply and are confirmed when you place the order.',
+      'Get laddus, snacks, and spices delivered to your door. The final price might change depending on the order.',
   },
   {
     id: 'bulk',
